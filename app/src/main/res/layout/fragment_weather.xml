@@ -26,14 +26,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ScrollView
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:id="@+id/sv_current_weather"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/menu"
-            android:overScrollMode="always"
             >
 
             <include
@@ -44,7 +43,7 @@
                 android:layout_gravity="top|center"
                 android:layout_marginTop="150dp" />
 
-        </ScrollView>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
         <include
             android:id="@+id/cl_rv_cards"
