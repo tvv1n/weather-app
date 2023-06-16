@@ -1,9 +1,9 @@
 package ua.com.tvv1n.weather.ui.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.ListAdapter
@@ -13,6 +13,7 @@ import ua.com.tvv1n.weather.R
 import ua.com.tvv1n.weather.databinding.CardRvItemLayoutBinding
 
 class CardAdapter : ListAdapter<CardModel, CardAdapter.Holder>(Comparator()) {
+    private var TAG = "CardAdapter"
     private lateinit var adapter: ForecastAdapter
 
     class Holder(view: View) : RecyclerView.ViewHolder(view) {

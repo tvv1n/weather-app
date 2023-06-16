@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">weather-app</string>
     <string name="city">City</string>
+    <string name="current_temp">5</string>
+    <string name="day">day</string>
+    <string name="temp_min">min temp</string>
+    <string name="temp_max">max temp</string>
+    <string name="slash">/</string>
+    <string name="card_title">card title</string>
 </resources>
