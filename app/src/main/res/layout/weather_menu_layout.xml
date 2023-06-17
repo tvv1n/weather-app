@@ -8,18 +8,19 @@
         android:id="@+id/ib_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:src="@drawable/baseline_add_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <!--    android:backgroundTint="#00FFFFFF"-->
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="@color/color_backgroundTint_Primary"
+        />
+
     <TextView
         android:id="@+id/tv_city"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/city"
-        android:textColor="@color/black"
+        android:textColor="@color/colorPrimary"
         android:padding="10dp"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,6 +35,8 @@
         android:src="@drawable/baseline_more_vert_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="@color/color_backgroundTint_Primary"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

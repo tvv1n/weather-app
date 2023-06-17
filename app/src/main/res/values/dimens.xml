@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tv_card_title">20sp</dimen>
+    <dimen name="tv_item">24sp</dimen>
+    <dimen name="cv_forecast_height">250dp</dimen>
+    <dimen name="cv_peekHeight">90dp</dimen>
+</resources>

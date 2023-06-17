@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:text="@string/day"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/colorPrimary"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +23,8 @@
         android:layout_marginEnd="10dp"
         android:text="@string/temp_min"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/tv_item"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/tv_temp_max"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,12 +37,12 @@
         android:layout_marginEnd="20dp"
         android:text="@string/slash"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/tv_item"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/tv_temp_max"
         app:layout_constraintStart_toEndOf="@id/tv_temp_min"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <TextView
         android:id="@+id/tv_temp_max"
@@ -49,10 +50,9 @@
         android:layout_height="wrap_content"
         android:text="@string/temp_max"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/tv_item"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <!--    </LinearLayout>-->
-
 </androidx.constraintlayout.widget.ConstraintLayout>

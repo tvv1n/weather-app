@@ -12,7 +12,7 @@
         android:nestedScrollingEnabled="true"
         android:translationZ="998dp"
         app:behavior_hideable="false"
-        app:behavior_peekHeight="80dp"
+        app:behavior_peekHeight="@dimen/cv_peekHeight"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
         tools:listitem="@layout/card_rv_item_layout" />
 
