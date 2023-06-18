@@ -21,8 +21,8 @@ class ForecastAdapter : ListAdapter<ForecastModel, ForecastAdapter.Holder>(Compa
                 .dateFormatter(item.time, "yyyy-MM-dd", "EEE")
 
             tvDay.text = days
-            tvTempMin.text = item.temp_min
-            tvTempMax.text = item.temp_max
+            tvTempMin.text = item.temp_min.toInt().toString()
+            tvTempMax.text = item.temp_max.toInt().toString()
         }
     }
 
