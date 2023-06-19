@@ -1,6 +1,4 @@
-package ua.com.tvv1n.weather.ui.model
-
-import androidx.lifecycle.LiveData
+package ua.com.tvv1n.weather.domain.model
 
 data class CardModel(
     val cardName: String,

@@ -1,15 +1,13 @@
 package ua.com.tvv1n.weather.ui.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import ua.com.tvv1n.weather.ui.model.CardModel
+import ua.com.tvv1n.weather.domain.model.CardModel
 import ua.com.tvv1n.weather.R
 import ua.com.tvv1n.weather.databinding.CardRvItemLayoutBinding
 

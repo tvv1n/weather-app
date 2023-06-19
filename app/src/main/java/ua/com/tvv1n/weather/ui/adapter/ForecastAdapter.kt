@@ -1,6 +1,5 @@
 package ua.com.tvv1n.weather.ui.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import ua.com.tvv1n.weather.R
 import ua.com.tvv1n.weather.databinding.CardContentRvItemBinding
-import ua.com.tvv1n.weather.ui.model.ForecastModel
+import ua.com.tvv1n.weather.domain.model.ForecastModel
 import ua.com.tvv1n.weather.util.Util
 
 class ForecastAdapter : ListAdapter<ForecastModel, ForecastAdapter.Holder>(Comparator()) {

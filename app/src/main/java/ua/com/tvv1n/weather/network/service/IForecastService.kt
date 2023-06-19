@@ -1,8 +1,8 @@
-package ua.com.tvv1n.weather.service
+package ua.com.tvv1n.weather.network.service
 
 import retrofit2.http.GET
 import retrofit2.http.Query
-import ua.com.tvv1n.weather.service.entity.ForecastWeatherEntity
+import ua.com.tvv1n.weather.network.dto.ForecastWeatherEntity
 
 interface IForecastService {
     @GET("v1/forecast?")

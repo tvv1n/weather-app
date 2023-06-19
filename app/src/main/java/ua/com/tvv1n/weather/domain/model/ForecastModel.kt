@@ -1,4 +1,4 @@
-package ua.com.tvv1n.weather.ui.model
+package ua.com.tvv1n.weather.domain.model
 
 data class ForecastModel(
     val time: String,

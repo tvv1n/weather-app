@@ -7,16 +7,20 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import ua.com.tvv1n.weather.databinding.FragmentWeatherBinding
 import ua.com.tvv1n.weather.ui.adapter.CardAdapter
-import ua.com.tvv1n.weather.ui.model.CardModel
-import ua.com.tvv1n.weather.ui.model.WeatherViewModel
+import ua.com.tvv1n.weather.domain.model.CardModel
+import ua.com.tvv1n.weather.repository.CurrentWeatherRepository
+import ua.com.tvv1n.weather.viewmodel.WeatherViewModel
 
 class WeatherFragment : Fragment() {
-    private var TAG = "WeatherFragment"
     private lateinit var binding: FragmentWeatherBinding
     private lateinit var adapter: CardAdapter
     private val model: WeatherViewModel by activityViewModels()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,7 +34,6 @@ class WeatherFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         updateCurrentWeatherValues()
         requestWeatherApi()
-
     }
 
     private fun updateCurrentWeatherValues() = with(binding) {

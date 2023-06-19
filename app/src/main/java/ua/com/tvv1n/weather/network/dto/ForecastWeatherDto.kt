@@ -1,4 +1,4 @@
-package ua.com.tvv1n.weather.service.entity
+package ua.com.tvv1n.weather.network.dto
 
 data class ForecastWeatherEntity(
     val daily: Date
