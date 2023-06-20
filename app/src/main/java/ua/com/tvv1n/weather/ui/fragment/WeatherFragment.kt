@@ -7,13 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import ua.com.tvv1n.weather.databinding.FragmentWeatherBinding
 import ua.com.tvv1n.weather.ui.adapter.CardAdapter
 import ua.com.tvv1n.weather.domain.model.CardModel
-import ua.com.tvv1n.weather.repository.CurrentWeatherRepository
 import ua.com.tvv1n.weather.viewmodel.WeatherViewModel
 
 class WeatherFragment : Fragment() {
@@ -33,7 +29,6 @@ class WeatherFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         updateCurrentWeatherValues()
-        requestWeatherApi()
     }
 
     private fun updateCurrentWeatherValues() = with(binding) {
@@ -49,10 +44,6 @@ class WeatherFragment : Fragment() {
             )
             initCardRcView(cardList)
         }
-    }
-
-    private fun requestWeatherApi() {
-        model.mapCurrentWeather()
     }
 
     private fun initCardRcView(cardList: List<CardModel>) = with(binding) {

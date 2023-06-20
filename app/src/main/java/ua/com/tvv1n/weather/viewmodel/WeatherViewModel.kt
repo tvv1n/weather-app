@@ -20,15 +20,11 @@ class WeatherViewModel : ViewModel() {
     private var currentWeatherRepository: CurrentWeatherRepository = CurrentWeatherRepository()
     private var forecastRepository: ForecastWeatherRepository = ForecastWeatherRepository()
 
-    fun getLiveDataCurrentWeather(): LiveData<CurrentWeatherModel> {
-        return liveDataCurrentWeather
+    init {
+        loadWeather()
     }
 
-    fun getLiveDataForecastListWeather(): LiveData<List<ForecastModel>> {
-        return liveForecastList
-    }
-
-    fun mapCurrentWeather() {
+    private fun loadWeather() {
         CoroutineScope(Dispatchers.Main).launch {
             val geoCityCoordinates: CityModel = geoRepository.getCityCoordinatesByName("Sumy", "ua")
 
@@ -39,5 +35,13 @@ class WeatherViewModel : ViewModel() {
             val forecastLists = forecastRepository.getWeatherForecast(geoCityCoordinates)
             liveForecastList.value = forecastLists
         }
+    }
+
+    fun getLiveDataCurrentWeather(): LiveData<CurrentWeatherModel> {
+        return liveDataCurrentWeather
+    }
+
+    fun getLiveDataForecastListWeather(): LiveData<List<ForecastModel>> {
+        return liveForecastList
     }
 }
