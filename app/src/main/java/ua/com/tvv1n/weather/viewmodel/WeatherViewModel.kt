@@ -6,34 +6,25 @@ import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import ua.com.tvv1n.weather.domain.model.CityModel
 import ua.com.tvv1n.weather.domain.model.CurrentWeatherModel
 import ua.com.tvv1n.weather.domain.model.ForecastModel
-import ua.com.tvv1n.weather.repository.CurrentWeatherRepository
-import ua.com.tvv1n.weather.repository.ForecastWeatherRepository
-import ua.com.tvv1n.weather.repository.GeocodingRepository
+import ua.com.tvv1n.weather.repository.WeatherRepository
 
 class WeatherViewModel : ViewModel() {
     private val liveDataCurrentWeather = MutableLiveData<CurrentWeatherModel>()
     private val liveForecastList = MutableLiveData<List<ForecastModel>>()
-    private var geoRepository: GeocodingRepository = GeocodingRepository()
-    private var currentWeatherRepository: CurrentWeatherRepository = CurrentWeatherRepository()
-    private var forecastRepository: ForecastWeatherRepository = ForecastWeatherRepository()
+    private var weatherRepository: WeatherRepository = WeatherRepository()
 
-    init {
-        loadWeather()
-    }
+    fun loadWeather(city: String, countryCode: String) {
 
-    private fun loadWeather() {
         CoroutineScope(Dispatchers.Main).launch {
-            val geoCityCoordinates: CityModel = geoRepository.getCityCoordinatesByName("Sumy", "ua")
-
             val currentWeather =
-                currentWeatherRepository.getCurrentWeatherByName(geoCityCoordinates)
+                weatherRepository.getCurrentWeatherByCity(city, countryCode)
             liveDataCurrentWeather.value = currentWeather
 
-            val forecastLists = forecastRepository.getWeatherForecast(geoCityCoordinates)
-            liveForecastList.value = forecastLists
+            val weatherForecast = weatherRepository.getWeatherForecast(city, countryCode)
+            liveForecastList.value = weatherForecast
+
         }
     }
 

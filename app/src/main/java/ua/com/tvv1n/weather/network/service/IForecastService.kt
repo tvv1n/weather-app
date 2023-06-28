@@ -2,7 +2,7 @@ package ua.com.tvv1n.weather.network.service
 
 import retrofit2.http.GET
 import retrofit2.http.Query
-import ua.com.tvv1n.weather.network.dto.ForecastWeatherEntity
+import ua.com.tvv1n.weather.network.dto.ForecastDailyDto
 
 interface IForecastService {
     @GET("v1/forecast?")
@@ -11,5 +11,5 @@ interface IForecastService {
         @Query("longitude") longitude: Double,
         @Query("daily") daily: Array<String>,
         @Query("timezone") timezone: String
-    ): ForecastWeatherEntity
+    ): ForecastDailyDto
 }

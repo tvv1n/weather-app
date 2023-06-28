@@ -1,6 +1,7 @@
 package ua.com.tvv1n.weather.ui.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,12 @@ import ua.com.tvv1n.weather.databinding.FragmentWeatherBinding
 import ua.com.tvv1n.weather.ui.adapter.CardAdapter
 import ua.com.tvv1n.weather.domain.model.CardModel
 import ua.com.tvv1n.weather.viewmodel.WeatherViewModel
+
+/*
+*
+* TODO
+*  -  No adapter attached; skipping layout
+*/
 
 class WeatherFragment : Fragment() {
     private lateinit var binding: FragmentWeatherBinding
@@ -28,6 +35,7 @@ class WeatherFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        model.loadWeather("Sumy", "ua")
         updateCurrentWeatherValues()
     }
 

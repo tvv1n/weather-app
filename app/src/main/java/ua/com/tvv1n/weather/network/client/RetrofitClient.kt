@@ -9,7 +9,7 @@ class RetrofitClient() {
                 .baseUrl(baseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
-         return   retrofit.create(serviceClass!!)
+         return retrofit.create(serviceClass!!)
     }
     companion object {
         fun getInstance() = RetrofitClient()

@@ -1,10 +1,10 @@
 package ua.com.tvv1n.weather.network.dto
 
-data class GeocodingModel(
-    val results: List<CityList>
+data class GeocodingDto(
+    val results: List<CityListDto>
 )
 
-data class CityList(
+data class CityListDto(
     val name: String,
     val country_code: String,
     val latitude: Double,
